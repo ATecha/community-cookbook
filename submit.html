@@ -65,13 +65,13 @@
   <input type = "checkbox" id = "foodTag" value = "egg">Eggs &emsp;&emsp;
   <input type = "checkbox" id = "foodTag" value = "dairy">dairy &emsp;&emsp;
   <input type = "checkbox" id = "foodTag" value = "vegetarian">Vegetarian &emsp;&emsp;
-  <input type = "checkbox" id = "foodTag" value = "vegan">Vegan &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "vegan">Vegan
 
 </fieldset>
 
 
 <p>
-<input type = "submit" value = "Submit Recipe">
+<input type = "submit" id = "submitRecipe">
 <!--
 <script>
   $( "#recipeForm" ).submit(function( event ) {
@@ -91,9 +91,10 @@
 <!-- Add Firebase products that you want to use -->
 <!-- <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script> -->
 <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
-<script>
-  alert("Page loaded");
+<script src="submitRecipe.js"></script>
 
+<!--
+<script>
   var config = {
     apiKey: "AIzaSyACvKZECcLtuQ8D3gKBuWCrqfQ4Varlg0U",
     authDomain: "uwbhacks.firebaseapp.com",
@@ -107,7 +108,17 @@
 
   //initial Firebase app
   firebase.initializeApp(config);
+</script>
 
+<script>
+  //$(window).load(function (){
+
+    $("#recipeForm").submit(function(event));
+    alert("Recipe submitted");
+    event.preventDefault();
+  //});
+
+  alert("other script works");
   //reference recommendations object in Firebase db
   var recipes = firebase.database().ref("recipes");
 
@@ -133,15 +144,9 @@
       "mealType": mealType
     });
   };
-
-
-  $(window).load(function (){
-
-    $("#recipeForm").submit(function(event));
-    alert("Recipe submitted");
-    event.preventDefault();
-  });
 </script>
-</body>
+-->
 
+
+</body>
 </html>

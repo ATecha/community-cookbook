@@ -14,12 +14,31 @@ body {
 
 .breakfastbutton {
 	position: fixed;
-	top: 70%; 
-	left: 20%; 
+	top: 60%; 
+	left: 25%; 
 	width: 70px; 
 	height: 70px; 
 	border: 0;
 }
+
+.lunchbutton {
+	position: fixed;
+	top: 60%; 
+	left: 50%; 
+	width: 70px; 
+	height: 70px; 
+	border: 0;
+}
+
+.dinnerbutton {
+	position: fixed;
+	top: 60%; 
+	left: 75%; 
+	width: 70px; 
+	height: 70px; 
+	border: 0;
+}
+
 
 
  /* Fixed sidenav, full height */

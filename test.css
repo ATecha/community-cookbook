@@ -8,6 +8,15 @@
 	opacity: 0.2;
 }
 
+.breakfastbutton {
+	position: fixed;
+	top: 70%; 
+	left: 20%; 
+	width: 70px; 
+	height: 70px; 
+	border: 0;
+}
+
 
  /* Fixed sidenav, full height */
 .sidenav {

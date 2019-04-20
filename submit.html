@@ -1,0 +1,152 @@
+<!-- to change which site you view, go to Settings > Pages and select the appropriate branch -->
+
+<html>
+<head>
+<title>Submit a Recipe</title>
+  <!-- use for sitewide css -->
+  <link rel="stylesheet" type="text/css" href="test.css" />
+  <!-- <script src="submitRecipe.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h1> Submit a Recipe </h1>
+<form id = "recipeForm">
+
+<fieldset>
+  <legend>Recipe Info</legend>
+  <input type = "text" id = recipeName" placeholder = "Recipe Name">
+  <input type = "text" id = recipeAuthor" placeholder = "Recipe Author">
+</fieldset>
+
+<fieldset>
+  <legend>Ingredients</legend>
+  <p>Amount Type of Measurement Ingredient
+    <br>Ex: 1 tsp salt
+    <p>
+  <input type = "text" id = "ingredientQty" placeholder = "Qty" size = "3">
+
+  <select name = "ingredientMeasurement">
+      <option value = "none">(none)</option>
+      <option value = "tsp">tsp</option>
+      <option value = "tbsp">Tbsp</option>
+      <option value = "cup">cup(s)</option>
+      <option value = "floz">fluid oz</option>
+      <option value = "wtoz">oz (weight)</option>
+      <option value = "lb">lb(s)</option>
+    </select>
+
+  <input type = "text" id = "ingredientName" placeholder = "Ingredient Name">
+  <p> [+ Add Ingredient]
+</fieldset>
+
+<fieldset>
+  <legend>Steps</legend>
+  <!-- dynamically number steps... -->
+  <textarea id = "steps" rows = "5" cols = "100" placeholder="Enter a step here"></textarea>
+  <p>[+ Add Step]
+</fieldset>
+
+
+<fieldset>
+  <legend>Tags</legend>
+  <br>Select Meal Type:<br>
+  <input type = "radio" id = "mealType" value = "Breakfast"> Breakfast &emsp;&emsp;
+  <input type = "radio" id = "mealType" value = "Dinner"> Dinner &emsp;&emsp;
+  <input type = "radio" id = "mealType" value = "Dessert"> Dessert &emsp;&emsp;
+  <input type = "radio" id = "mealType" value = "Snack"> Snack
+  <p>
+
+  Select what this recipe contains:<br>
+  <input type = "checkbox" id = "foodTag" value = "redMeat">Red Meat &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "chx">Chicken &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "fish">Fish &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "egg">Eggs &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "dairy">dairy &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "vegetarian">Vegetarian &emsp;&emsp;
+  <input type = "checkbox" id = "foodTag" value = "vegan">Vegan
+
+</fieldset>
+
+
+<p>
+<input type = "submit" id = "submitRecipe">
+<!--
+<script>
+  $( "#recipeForm" ).submit(function( event ) {
+    alert( "Handler for .submit() called." );
+    event.preventDefault();
+  });
+</script>
+-->
+
+</form>
+
+
+<!-- enable use of Google Firebase -->
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+<script src="submitRecipe.js"></script>
+
+<!--
+<script>
+  var config = {
+    apiKey: "AIzaSyACvKZECcLtuQ8D3gKBuWCrqfQ4Varlg0U",
+    authDomain: "uwbhacks.firebaseapp.com",
+    databaseURL: "https://uwbhacks.firebaseio.com",
+    projectId: "uwbhacks",
+    storageBucket: "uwbhacks.appspot.com",
+    messagingSenderId: "1003450066331"
+  };
+
+  //recipeForm.submit(function(event)){
+
+  //initial Firebase app
+  firebase.initializeApp(config);
+</script>
+
+<script>
+  //$(window).load(function (){
+
+    $("#recipeForm").submit(function(event));
+    alert("Recipe submitted");
+    event.preventDefault();
+  //});
+
+  alert("other script works");
+  //reference recommendations object in Firebase db
+  var recipes = firebase.database().ref("recipes");
+
+  //save new recipe to db, using input from form
+  var submitRecipe = function() {}
+
+    var name = $("#recipeName").val();
+    var author = $("#recipeAuthor").val();
+    var iQty = $("#ingredientQty").val();
+    var iMeasure = $("#ingredientMeasurement").val();
+    var iName = $("#ingredientName").val();
+    var steps = $("#steps").val();
+    var mealType = $("#mealType").val();
+    //also need need for check boxes
+
+    recipes.push({
+      "name": name,
+      "author": author,
+      "iName": iName,
+      "iQty": iQty,
+      "iMeasure": iMeasure,
+      "steps": steps,
+      "mealType": mealType
+    });
+  };
+</script>
+-->
+
+
+</body>
+</html>

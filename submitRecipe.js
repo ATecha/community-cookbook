@@ -1,18 +1,3 @@
-///var recipeForm = $("#recipeForm");
-/*
-$(function() { //shorthand document.ready function
-    $('#recipeForm').on('submit', function(e) { //use on if jQuery 1.7+
-        alert("external js");
-        e.preventDefault();  //prevent form from submitting
-        var data = $("#login_form :input").serializeArray();
-        console.log(data); //use the console for debugging, F12 in Chrome, not alerts
-    });
-});
-*/
-
-
-//alert("Page loaded");
-
 var config = {
   apiKey: "AIzaSyACvKZECcLtuQ8D3gKBuWCrqfQ4Varlg0U",
   authDomain: "uwbhacks.firebaseapp.com",
@@ -22,20 +7,21 @@ var config = {
   messagingSenderId: "1003450066331"
 };
 
-//recipeForm.submit(function(event)){
-
 //initial Firebase app
 firebase.initializeApp(config);
 
 //reference recommendations object in Firebase db
-var recipes = firebase.database().ref("recipes");
+var recipesRef = firebase.database().ref("recipes");
 
 //listen for form submit
 document.getElementById("recipeForm").addEventListener("submit", submitForm);
 
 
 //save new recipe to db, using input from form
-//var submitRecipe = function() {}
+
+function getInputVal(id){
+    return document.getElementById(id).value
+}
 
 function submitForm(e){
   e.preventDefault();
@@ -48,8 +34,8 @@ function submitForm(e){
   var iName = $("#ingredientName").val();
   var steps = $("#steps").val();
   var mealType = $("#mealType").val();
-  */
   //also need need for check boxes
+  */
 
   var name = getInputVal("recipeName");
   var author = getInputVal("recipeAuthor");
@@ -61,10 +47,14 @@ function submitForm(e){
 
   //save to database
   saveRecipe(name, author, iQty, iMeasure, iName, steps, mealType);
+
+  //clear recipe
+  document.getElementById("recipeForm").reset();
+  alert("Reciped added!");
 }
 
 function saveRecipe(name, author, iQty, iMeasure, iName, steps, mealType){
-  var newRecipeRef = recipes.push();
+  var newRecipeRef = recipesRef.push();
   newRecipeRef.set({
     name: name,
     author: author,
@@ -75,12 +65,3 @@ function saveRecipe(name, author, iQty, iMeasure, iName, steps, mealType){
     mealType: mealType
   });
 }
-
-/*
-$(window).load(function (){
-
-  $("#recipeForm").submit(submitRecipe);
-  alert("Recipe submitted");
-  event.preventDefault();
-});
-*/

@@ -1,10 +1,10 @@
 var config = {
-  apiKey: "AIzaSyACvKZECcLtuQ8D3gKBuWCrqfQ4Varlg0U",
-  authDomain: "uwbhacks.firebaseapp.com",
-  databaseURL: "https://uwbhacks.firebaseio.com",
-  projectId: "uwbhacks",
-  storageBucket: "uwbhacks.appspot.com",
-  messagingSenderId: "1003450066331"
+  apiKey: xxxx,
+  authDomain: xxxx,
+  databaseURL:  xxxx,
+  projectId: xxxx,
+  storageBucket: xxxx,
+  messagingSenderId:  xxxx,
 };
 
 //initial Firebase app

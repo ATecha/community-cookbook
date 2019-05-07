@@ -8,6 +8,14 @@ Between the mixer, workshops, and final presentations, we spent about 8 hours wo
 
 For a quick overview, check out the [PDF of the slides that accompanied our demo](../blob/master/UWBHacks%20Presentation.pdf).
 
+**
+[The Team](#the-team)</br>
+[The Outcome](#the-outcome)</br>
+[The Challenge](#the-challenge)</br>
+[The Process](#the-process)</br>
+[Statements from the Team](#statements-from-the-team)</br>
+[Other Things We Learned](#other-things-we-learned)</br>**
+
 ### The Team
 [**Andrew Wietecha**](https://github.com/ATecha) - input form, database, backend</br>
 [**Cheng Kong**](https://github.com/ChengLoong) - web design, hosting and domain setup</br>
